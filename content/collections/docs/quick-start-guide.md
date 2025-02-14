@@ -6,7 +6,7 @@ id: 1d1920fb-604c-4ac1-8c99-f0de44abc06b
 ---
 ## Overview
 
-Much of the documentation is intended to be used as a reference sheet for various features, explaining how they work and what options and settings they provide. But not this guide. This is for glueing it all together, assuming you know very little about how Statamic works. We'll only make a couple of assumptions here before we get started.
+Much of the documentation is intended to be used as a reference sheet for various features, explaining how they work and what options and settings they provide. But not this guide. This is for gluing it all together, assuming you know very little about how Statamic works. We'll only make a couple of assumptions here before we get started.
 
 1. You are comfortable working with HTML.
 2. You have a local dev environment with [composer](https://getcomposer.org/) installed.
@@ -17,7 +17,7 @@ Much of the documentation is intended to be used as a reference sheet for variou
 
 We're going to build a simple personal website for a fictitious young aspiring programmer named Kurt Logan. Kurt always has and always will live in the 1980s and is very excited at the prospect of having his very own place in <span class="uppercase font-bold tracking-widest text-green font-display">Cyberspace</span>.
 
-**This is not a "5 minute quick install guide" – we're going to be building a simple yet full site from scratch so you can see how everything comes together. It will likely take around 20-30 minutes.**
+**This is not a "5 minute quick install guide" – we're going to be building a simple yet full site from scratch so you can see how everything comes together. It will likely take around 20-30 minutes.**
 
 ## High level approach
 
@@ -151,9 +151,9 @@ Think of layouts like a **picture frame**, and everything that changes from sect
 
 ## Now let's build a blog
 
-You might have known it was coming next – it's the staple of every CMS walkthrough. How easy is it to build a blog? You're about to find out.
+You might have known it was coming next – it's the staple of every CMS walkthrough. How easy is it to build a blog? You're about to find out.
 
-But first, let's talk about what a blog is. A "blog" is a collection of posts that shares common traits or attributes. A typical blog post might contain a title, featured image, an author, a few tags, and the article content.
+But first, let's talk about what a blog is. A "blog" is a collection of posts that shares common traits or attributes. A typical blog post might contain a title, featured image, an author, a few tags, and the article content.
 
 There also always a list (sometimes called an "archive") of blog posts linking to each post's unique URL, and sometimes the homepage has a short list of the most recent posts as well. Let's detail exactly what we're going to build, and then build it.
 
@@ -207,12 +207,12 @@ Next, let's configure the collection to behave the way a typical blog should. Cl
 :::tip
 Statamic does its best to take a "start simple and add things as needed" approach to features and settings, in contrast to other platforms that take a "everything is included and rip out what you don't want" approach.
 
-This means that Statamic doesn't do everything right out the box, but is much simpler to customize how you want everything to work.
+This means that Statamic doesn't do everything right out of the box, but is much simpler to customize how you want everything to work.
 :::
 
 We'll review some of the important settings, but we only need to touch two of them to make a blog:
 
-- Enable Publish Dates (the subs-setting defaults are perfect)
+- Enable Publish Dates (the sub-setting defaults are perfect)
 - Set your route rule
 
 <figure>
@@ -257,7 +257,7 @@ Now you can see all the default fields for your new Collection. They're the same
 | Field | Notes |
 |-----------------------------------|-----------------------------------|
 | **Title** | The required title of the entry |
-| **Content** | A simple [Markdown](/fieldtypes/markdown) field |
+| **Content** | A simple [Markdown](/fieldtypes/markdown) field |
 | **Author** | Defaults to whoever is logged in |
 | **Template** | When not _explicitly set_ will use the Collection's default |
 | **Slug** | Automatically generated off the title until you edit it manually |
@@ -333,7 +333,7 @@ A few cool things to note here in this code example:
 
 ## Blog Index
 
-Next, let's make that blog index page. Head back to the control panel and go to the **Pages** collection. Create a new entry and call it "Blog", "My Blog", or even "My CyberBlog" — just make sure the slug is `blog`. Set the template to `blog/index`.
+Next, let's make that blog index page. Head back to the control panel and go to the **Pages** collection. Create a new entry and call it "Blog", "My Blog", or even "My CyberBlog" — just make sure the slug is `blog`. Set the template to `blog/index`.
 
 Back to your code editor — open up the `resources/views/blog/index.antlers.html` template and drop in this snippet. It's essentially what we built on the home page, but without the limit.
 
@@ -353,7 +353,7 @@ Back to your code editor — open up the `resources/views/blog/index.antlers.htm
 </section>
 ```
 
-And stop right there. We've now duplicated a whole chunk of code for one tiny little bit — `limit="5'`. Let's DRY this up (reduce code duplication).
+And stop right there. We've now duplicated a whole chunk of code for one tiny little bit — `limit="5'`. Let's DRY this up (reduce code duplication).
 
 :::tip
 It's totally fine to duplicate code sometimes, especially if you have to make some code significantly more complex to reuse it. Just keep that in mind. We'll keep this simple.
@@ -447,7 +447,7 @@ Tab Sections let you group fields into Tabs which can help you stay organized, k
 You can drag, drop, and rearrange fields inside and across your sections. This order will be how you see the fields in the publish screen.
 
 :::tip
-**The Sidebar** is a special section. It controls the fields shown in the publish sidebar when your browser is wide enough, and collapses those fields to a tab when it isn't. If you delete the Sidebar section, you won't have one — and if you create a new one called "Sidebar", it'll work just as before.
+**The Sidebar** is a special section. It controls the fields shown in the publish sidebar when your browser is wide enough, and collapses those fields to a tab when it isn't. If you delete the Sidebar section, you won't have one — and if you create a new one called "Sidebar", it'll work just as before.
 :::
 
 Let's create a new field called `featured_image`.
@@ -472,7 +472,7 @@ Next, give the field the `Display` name "Featured Image" and you'll see the `Han
 
 Head back to your Blog collection and edit an entry (or create a new one if you'd like). You'll see your new field right there. Upload any image you have on your computer. If you need a dummy image, we recommend Google Image Searching for "rad 90s kid bedroom". That's a gold mine right there.
 
-Hover over the thumbnail for your new image and click the Edit button (it looks like a pencil). There you can make a few adjustments to the image – like setting an Alt tag.
+Hover over the thumbnail for your new image and click the Edit button (it looks like a pencil). There you can make a few adjustments to the image – like setting an Alt tag.
 
 <figure>
     <img src="/img/quick-start/asset-editor.jpg" alt="Adding an Alt tag to an image" width="547">
@@ -496,7 +496,7 @@ Head back to `resources/views/blog/show.antlers.html` in your code editor. Add t
 <img src="{{ featured_image }}" class="border-2 border-green-400 p-1" alt="{{ featured_image:alt }}" />
 ```
 
-Refresh the page and there you have it — a basic but fully functional website. Hopefully you'll have a better idea how the basics fit together, as well as the relationship between the control panel and the frontend. There are so many more things you can do – like add [Taxonomies](/taxonomies), [Forms](/forms), [dynamic image manipulations](/tags/glide), fetch data with JavaScript with our [Content API](/rest-api) and on and on.
+Refresh the page and there you have it — a basic but fully functional website. Hopefully you'll have a better idea how the basics fit together, as well as the relationship between the control panel and the frontend. There are so many more things you can do – like add [Taxonomies](/taxonomies), [Forms](/forms), [dynamic image manipulations](/tags/glide), fetch data with JavaScript with our [Content API](/rest-api) and on and on.
 
 And make sure to not miss the list of [Tags](/tags) and [Modifiers](/modifiers) that do all sorts of powerful things in your templates.
 
